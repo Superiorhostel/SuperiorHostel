@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Superior Boys Hostel</title>
+<meta name="description" content="The story behind Superior Boys Hostel — safety, friendly management and clean rooms.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="admin-bar" id="adminBar">
+  <span>🔐 ADMIN MODE — you can upload photos & manage the blog now.</span>
+  <button onclick="adminLogout()">Log out</button>
+</div>
+
+<header>
+  <div class="navwrap">
+    <div class="brandmark">
+      <div class="plate" id="logoPlate">SBH</div>
+      <div class="brandtext">
+        <strong>Superior Boys Hostel</strong>
+        <span>SAFE STAY · SUPERIOR LIFE</span>
+      </div>
+      <button class="logo-upload-btn admin-only" onclick="document.getElementById('logoInput').click()">Change logo</button>
+      <input type="file" id="logoInput" accept="image/*" class="visually-hidden" onchange="handleLogoUpload(event)">
+    </div>
+    <nav class="links">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="rooms.html" data-page="rooms.html">Rooms</a>
+      <a href="facilities.html" data-page="facilities.html">Facilities</a>
+      <a href="gallery.html" data-page="gallery.html">Gallery</a>
+      <a href="blog.html" data-page="blog.html">Blog</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+    </nav>
+    <div class="nav-ctas">
+      <a class="btn btn-ghost" href="tel:+923333899393">Call</a>
+      <a class="btn btn-whats" href="https://wa.me/923333899393" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our Story</span>
+      <h2>About Superior Boys Hostel</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>Superior Boys Hostel was built on a simple idea: a hostel should be safe enough for a parent to stop worrying, and comfortable enough for a student to actually call it home. What started as a small residence for a handful of students has grown into a trusted address for boys studying and working across the city.</p>
+        <p>Every corridor is watched, every room is cleaned on schedule, and every resident is treated like family — not a room number. Our management stays on-site and reachable, so problems get solved the same day, not the same month.</p>
+        <p>No shortcuts on security, no compromise on cleanliness — that's the promise behind the name "Superior."</p>
+      </div>
+      <div class="index-cards">
+        <div class="index-card"><span class="pin"></span><h4>Safe & Secure</h4><p>CCTV-monitored premises with a manned entrance around the clock.</p></div>
+        <div class="index-card"><span class="pin"></span><h4>Friendly Management</h4><p>On-site staff who know every resident by name, not by room number.</p></div>
+        <div class="index-card"><span class="pin"></span><h4>Clean Rooms</h4><p>Scheduled housekeeping and fresh linen, every single week.</p></div>
+        <div class="index-card"><span class="pin"></span><h4>Built on Trust</h4><p>Years of word-of-mouth referrals from students and their families.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="brandmark">
+          <div class="plate">SBH</div>
+          <div class="brandtext"><strong style="color:var(--paper);">Superior Boys Hostel</strong><span>SAFE STAY · SUPERIOR LIFE</span></div>
+        </div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="about.html">About Us</a><a href="rooms.html">Rooms</a><a href="facilities.html">Facilities</a><a href="gallery.html">Gallery</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="tel:+923333899393">0333-3899393</a><a href="https://wa.me/923333899393" target="_blank" rel="noopener">WhatsApp</a><a href="https://maps.app.goo.gl/Niik4RFLhAJs5gRj8?g_st=aw" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+        <div class="foot-col">
+          <h5>Site</h5>
+          <div id="footerAuthArea"><a href="login.html">🔐 Admin Login</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Superior Boys Hostel. All rights reserved.</span>
+      <span>Registered residence for students & working professionals.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923333899393" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script src="app.js"></script>
+<script>
+initHeaderFooter();
+</script>
+
+</body>
+</html>

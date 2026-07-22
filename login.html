@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Login — Superior Boys Hostel</title>
+<meta name="description" content="Staff login for Superior Boys Hostel website management.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+  .login-wrap{padding:100px 0; min-height:60vh;}
+  .login-card{
+    max-width:420px; margin:0 auto; background:var(--ink); color:var(--paper);
+    border-radius:8px; padding:34px 30px; box-shadow:10px 10px 0 rgba(21,34,51,0.12);
+  }
+  .login-card .plate{margin:0 auto 18px; border-radius:50%;}
+  .login-card h2{color:var(--paper); font-size:24px; text-align:center;}
+  .login-sub{color:#c7c1ac; text-align:center; font-size:13.5px; margin:10px 0 26px;}
+  .login-field{margin-bottom:18px;}
+  .login-field label{
+    display:block; font-family:'JetBrains Mono'; font-size:11px; text-transform:uppercase;
+    letter-spacing:0.08em; color:var(--brass); margin-bottom:6px;
+  }
+  .login-field input{
+    width:100%; border:2px solid var(--brass); border-radius:4px; padding:11px 12px;
+    background:var(--ink-2); color:#fff; font-family:'Inter'; font-size:14px;
+  }
+  .login-field input:focus{outline:2px solid var(--paper); outline-offset:1px;}
+  .login-error{
+    display:none; background:rgba(139,58,46,0.25); border:1px solid var(--brick);
+    color:#f3c8c2; font-size:13px; padding:10px 12px; border-radius:4px; margin-bottom:16px;
+  }
+  .login-submit{width:100%; justify-content:center;}
+  .login-back{display:block; text-align:center; margin-top:20px; font-size:13px; color:var(--muted); text-decoration:underline;}
+</style>
+</head>
+<body>
+
+<div class="admin-bar" id="adminBar">
+  <span>🔐 ADMIN MODE — you can upload photos & manage the blog now.</span>
+  <button onclick="logout()">Log out</button>
+</div>
+
+<header>
+  <div class="navwrap">
+    <div class="brandmark">
+      <div class="plate" id="logoPlate">SBH</div>
+      <div class="brandtext">
+        <strong>Superior Boys Hostel</strong>
+        <span>SAFE STAY · SUPERIOR LIFE</span>
+      </div>
+    </div>
+    <nav class="links">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="rooms.html" data-page="rooms.html">Rooms</a>
+      <a href="facilities.html" data-page="facilities.html">Facilities</a>
+      <a href="gallery.html" data-page="gallery.html">Gallery</a>
+      <a href="blog.html" data-page="blog.html">Blog</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+    </nav>
+    <div class="nav-ctas">
+      <a class="btn btn-ghost" href="tel:+923333899393">Call</a>
+      <a class="btn btn-whats" href="https://wa.me/923333899393" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section class="login-wrap">
+  <div class="wrap">
+    <div class="login-card">
+      <div class="plate" style="width:52px; height:52px; font-size:18px;">SBH</div>
+      <h2>Staff Login</h2>
+      <p class="login-sub">Sign in to manage the blog, gallery photos and logo.</p>
+
+      <div class="login-error" id="loginError">Incorrect username or password. Please try again.</div>
+
+      <form id="loginForm">
+        <div class="login-field">
+          <label for="loginUser">Username</label>
+          <input type="text" id="loginUser" autocomplete="username" required>
+        </div>
+        <div class="login-field">
+          <label for="loginPass">Password</label>
+          <input type="password" id="loginPass" autocomplete="current-password" required>
+        </div>
+        <button class="btn btn-primary login-submit" type="submit">Log In</button>
+      </form>
+
+      <a class="login-back" href="index.html">← Back to the website</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom" style="border-top:none; padding-top:0;">
+      <span>© 2026 Superior Boys Hostel. All rights reserved.</span>
+      <span>Staff area — authorized access only.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', async function(e){
+    e.preventDefault();
+    const u = document.getElementById('loginUser').value.trim();
+    const p = document.getElementById('loginPass').value;
+    const errBox = document.getElementById('loginError');
+    if(u === ADMIN_USERNAME && p === ADMIN_PASSWORD){
+      const ok = await safeSet('admin:session', 'true', false);
+      if(!ok){ errBox.textContent = 'Could not start your session — please try again.'; errBox.style.display = 'block'; return; }
+      window.location.href = 'index.html';
+    } else {
+      errBox.textContent = 'Incorrect username or password. Please try again.';
+      errBox.style.display = 'block';
+    }
+  });
+
+  initHeaderFooter();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rooms — Superior Boys Hostel</title>
+<meta name="description" content="Single, double and triple sharing rooms at Superior Boys Hostel.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="admin-bar" id="adminBar">
+  <span>🔐 ADMIN MODE — you can upload photos & manage the blog now.</span>
+  <button onclick="adminLogout()">Log out</button>
+</div>
+
+<header>
+  <div class="navwrap">
+    <div class="brandmark">
+      <div class="plate" id="logoPlate">SBH</div>
+      <div class="brandtext">
+        <strong>Superior Boys Hostel</strong>
+        <span>SAFE STAY · SUPERIOR LIFE</span>
+      </div>
+      <button class="logo-upload-btn admin-only" onclick="document.getElementById('logoInput').click()">Change logo</button>
+      <input type="file" id="logoInput" accept="image/*" class="visually-hidden" onchange="handleLogoUpload(event)">
+    </div>
+    <nav class="links">
+      <a href="index.html" data-page="index.html">Home</a>
+      <a href="about.html" data-page="about.html">About</a>
+      <a href="rooms.html" data-page="rooms.html">Rooms</a>
+      <a href="facilities.html" data-page="facilities.html">Facilities</a>
+      <a href="gallery.html" data-page="gallery.html">Gallery</a>
+      <a href="blog.html" data-page="blog.html">Blog</a>
+      <a href="contact.html" data-page="contact.html">Contact</a>
+    </nav>
+    <div class="nav-ctas">
+      <a class="btn btn-ghost" href="tel:+923333899393">Call</a>
+      <a class="btn btn-whats" href="https://wa.me/923333899393" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<section id="rooms" style="background:var(--paper-2); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Choose Your Stay</span>
+      <h2>Rooms & Sharing Options</h2>
+      <p>Three ways to stay — pick what suits your budget and your need for company.</p>
+    </div>
+    <div class="room-grid">
+      <div class="room-card">
+        <div class="room-plate"><span class="roomno">UNIT / SINGLE</span><h3>Single Sharing</h3>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 4v16"/></svg>
+        </div>
+        <div class="room-body">
+          <ul><li>One resident per room</li><li>Private study desk & chair</li><li>Personal wardrobe</li><li>Attached washroom</li><li>Maximum privacy & quiet</li></ul>
+          <div class="room-foot"><span class="tag">Best for focus</span><a href="contact.html">Enquire →</a></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-plate"><span class="roomno">UNIT / DOUBLE</span><h3>Double Sharing</h3>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 12h16"/></svg>
+        </div>
+        <div class="room-body">
+          <ul><li>Two residents per room</li><li>Two study desks & wardrobes</li><li>Attached washroom</li><li>Balanced privacy & company</li><li>Most popular choice</li></ul>
+          <div class="room-foot"><span class="tag">Most booked</span><a href="contact.html">Enquire →</a></div>
+        </div>
+      </div>
+      <div class="room-card">
+        <div class="room-plate"><span class="roomno">UNIT / TRIPLE</span><h3>Triple Sharing</h3>
+          <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="var(--brass)" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 9.3h16M4 14.7h16"/></svg>
+        </div>
+        <div class="room-body">
+          <ul><li>Three residents per room</li><li>Individual desk & storage each</li><li>Attached washroom</li><li>Most budget-friendly</li><li>Great for friends staying together</li></ul>
+          <div class="room-foot"><span class="tag">Lowest cost</span><a href="contact.html">Enquire →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-col">
+        <div class="brandmark">
+          <div class="plate">SBH</div>
+          <div class="brandtext"><strong style="color:var(--paper);">Superior Boys Hostel</strong><span>SAFE STAY · SUPERIOR LIFE</span></div>
+        </div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h5>Explore</h5>
+          <a href="about.html">About Us</a><a href="rooms.html">Rooms</a><a href="facilities.html">Facilities</a><a href="gallery.html">Gallery</a>
+        </div>
+        <div class="foot-col">
+          <h5>Contact</h5>
+          <a href="tel:+923333899393">0333-3899393</a><a href="https://wa.me/923333899393" target="_blank" rel="noopener">WhatsApp</a><a href="https://maps.app.goo.gl/Niik4RFLhAJs5gRj8?g_st=aw" target="_blank" rel="noopener">Google Maps</a>
+        </div>
+        <div class="foot-col">
+          <h5>Site</h5>
+          <div id="footerAuthArea"><a href="login.html">🔐 Admin Login</a></div>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Superior Boys Hostel. All rights reserved.</span>
+      <span>Registered residence for students & working professionals.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/923333899393" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">💬</a>
+
+<script src="app.js"></script>
+<script>
+initHeaderFooter();
+</script>
+
+</body>
+</html>
